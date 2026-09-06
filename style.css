@@ -1,0 +1,151 @@
+/* style.css */
+:root {
+    /* Adjusted for faster floating speed */
+    --marquee-speed-fastest: 18s;
+    --marquee-speed-fast: 22s;
+    --marquee-speed-medium: 26s;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+::selection {
+    background-color: #0176D3;
+    color: #ffffff;
+}
+
+/* --- Floating Skills Marquee (Seamless Infinite Loop) --- */
+.marquee-wrapper {
+    overflow: hidden;
+    user-select: none;
+    display: flex;
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+    position: relative;
+}
+
+/* 
+  To create a perfect infinite loop without a gap:
+  1. The content must be duplicated exactly.
+  2. The parent must be width: max-content.
+  3. The animation translates exactly -50% (the width of the first duplicated group).
+*/
+.marquee-content, .marquee-content-reverse {
+    display: flex;
+    width: max-content;
+}
+
+.speed-fast { animation: scroll-left var(--marquee-speed-fast) linear infinite; }
+.speed-medium { animation: scroll-right var(--marquee-speed-medium) linear infinite; }
+.speed-fastest { animation: scroll-left var(--marquee-speed-fastest) linear infinite; }
+
+.marquee-wrapper:hover .marquee-content,
+.marquee-wrapper:hover .marquee-content-reverse {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+@keyframes scroll-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Skill Pill styling */
+.skill-pill {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    border: 1px solid #2a364d;
+    background: rgba(21, 30, 50, 0.5);
+    color: #cbd5e1;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+.pill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    box-shadow: 0 0 8px currentColor;
+}
+.skill-pill:hover {
+    background: #1e293b;
+    color: #ffffff;
+    transform: translateY(-2px);
+    border-color: #475569;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Light mode overrides for skill pills (Premium solid clean look) */
+html:not(.dark) .skill-pill {
+    border-color: #e2e8f0;
+    background: #ffffff;
+    color: #475569;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+html:not(.dark) .skill-pill:hover {
+    background: #f8fafc;
+    color: #0f172a;
+    border-color: #cbd5e1;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* --- Project Card Bottom Skill Tags --- */
+.skill-tag {
+    font-size: 0.75rem;
+    padding: 0.35rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid #2a364d;
+    color: #cbd5e1;
+    background: rgba(21, 30, 50, 0.4);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+html:not(.dark) .skill-tag {
+    border-color: #e2e8f0;
+    color: #475569;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+/* --- Smooth Fade-in on Scroll --- */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Creative Background Pulse Animation --- */
+@keyframes pulse-slow {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+.animate-pulse-slow {
+    animation: pulse-slow 8s ease-in-out infinite;
+}
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+/* --- Custom Scrollbar --- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0b1121; }
+html:not(.dark) ::-webkit-scrollbar-track { background: #f8fafc; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; border: 2px solid #0b1121; }
+html:not(.dark) ::-webkit-scrollbar-thumb { background: #cbd5e1; border: 2px solid #f8fafc; }
+::-webkit-scrollbar-thumb:hover { background: #0176D3; }

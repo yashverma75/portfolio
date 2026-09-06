@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Verma | Salesforce Developer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        sfblue: '#0176D3',
+                        sfdark: '#0b1121',
+                        cardbg: '#151e32',
+                        cardborder: '#2a364d'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome & Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body id="body-theme" class="transition-colors duration-700 bg-slate-50 text-slate-900 dark:bg-sfdark dark:text-slate-200 relative overflow-x-hidden">
+
+    <!-- Creative Background Glow -->
+    <div class="fixed top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-blue-500/10 dark:bg-blue-600/10 rounded-full blur-[100px] pointer-events-none animate-pulse-slow"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-purple-500/10 dark:bg-purple-600/10 rounded-full blur-[100px] pointer-events-none animate-pulse-slow animation-delay-2000"></div>
+
+    <!-- Sticky Resume FAB -->
+    <a href="Resources/Yash_Verma_Resume.pdf" target="_blank" class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] flex items-center gap-2 px-6 py-4 bg-sfblue text-white font-bold rounded-full shadow-[0_0_20px_rgba(1,118,211,0.5)] hover:bg-blue-700 hover:scale-105 transition-all group">
+        <i class="fa-solid fa-file-pdf group-hover:-translate-y-1 transition-transform"></i>
+        <span class="hidden md:inline">Download Resume</span>
+    </a>
+
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white/80 dark:bg-sfdark/80 backdrop-blur-md border-b border-slate-200 dark:border-cardborder transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-bold text-2xl tracking-tight text-sfblue group cursor-pointer" onclick="window.scrollTo(0,0)">
+                    Yash<span class="text-slate-900 dark:text-white group-hover:text-sfblue transition-colors">Verma</span>
+                </div>
+                <nav class="hidden md:flex space-x-1">
+                    <a href="#about" class="px-4 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-cardbg text-slate-600 dark:text-slate-200 transition-all duration-300 font-medium">About</a>
+                    <a href="#skills" class="px-4 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-cardbg text-slate-600 dark:text-slate-200 transition-all duration-300 font-medium">Skills</a>
+                    <a href="#experience" class="px-4 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-cardbg text-slate-600 dark:text-slate-200 transition-all duration-300 font-medium">Experience</a>
+                    <a href="#projects" class="px-4 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-cardbg text-slate-600 dark:text-slate-200 transition-all duration-300 font-medium">Projects</a>
+                    <a href="#contact" class="px-4 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-cardbg text-slate-600 dark:text-slate-200 transition-all duration-300 font-medium">Contact</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <button id="gradient-toggle" class="p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-cardbg text-slate-500 dark:text-slate-300 transition-all duration-300 group" aria-label="Change Theme">
+                        <i class="fa-solid fa-palette text-lg group-hover:rotate-12 transition-transform"></i>
+                    </button>
+                    <button id="theme-toggle" class="p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-cardbg text-slate-500 dark:text-slate-300 transition-all duration-300 group" aria-label="Toggle Dark Mode">
+                        <i id="theme-icon" class="fa-solid fa-moon text-lg group-hover:-rotate-12 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-20 relative z-10">
+        <!-- Hero Section -->
+        <section id="home" class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20 fade-in-up">
+            <div class="max-w-4xl text-center mx-auto mt-10">
+                <p class="text-sfblue font-bold mb-4 tracking-widest uppercase text-sm drop-shadow-sm">Salesforce & OmniStudio Developer</p>
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-slate-900 dark:text-white tracking-tight">
+                    Building Scalable Enterprise Solutions with <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-sfblue to-cyan-400">Code & Clicks</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto font-medium">
+                    Copado 2x Certified | Specializing in Apex, LWC, OmniStudio, and complex REST API integrations to drive scalable CRM architecture.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="#projects" class="px-8 py-3 bg-sfblue text-white font-medium rounded-xl hover:bg-blue-700 hover:scale-105 transition-all shadow-[0_0_15px_rgba(1,118,211,0.4)]"><strong>View My Work</strong></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="mb-12 flex items-center gap-4 fade-in-up">
+                <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-cardborder flex items-center justify-center shadow-inner border border-slate-200 dark:border-transparent">
+                    <i class="fa-solid fa-user text-slate-700 dark:text-slate-300 text-xl"></i>
+                </div>
+                <div>
+                    <p class="text-sm tracking-widest text-sfblue uppercase font-bold drop-shadow-sm">Who I Am</p>
+                    <h2 class="text-4xl font-black text-slate-900 dark:text-white">About Me</h2>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-12 items-center fade-in-up">
+                <!-- Professional Photo Placeholder -->
+                <div class="w-full md:w-1/3 flex justify-center items-center">
+    <div class="relative w-64 h-64 md:w-72 md:h-72 overflow-hidden rounded-3xl">
+        <div class="absolute inset-0 bg-gradient-to-tr from-sfblue to-purple-500 rounded-3xl rotate-6 opacity-50 blur-lg"></div>
+        <!-- PLACEHOLDER: Replace src with your actual professional photo -->
+        <img src="Resources/profile.jpg.jpeg" alt="Yash Verma" class="relative z-10 w-full h-full object-cover scale-170 border-4 border-white dark:border-cardborder shadow-xl">
+    </div>
+</div>
+
+                <!-- Bio -->
+                <div class="w-full md:w-2/3 space-y-5 text-lg text-slate-600 dark:text-slate-300 font-medium">
+                    <p>
+                        Hello! I am <strong class="text-slate-900 dark:text-white">Yash Verma</strong>, a passionate Associate Salesforce Developer currently based in Noida. I have done B.Tech in Computer Science and Engineering (8 CGPA). 
+                    </p>
+                    <p>
+                        My journey began in core software engineering—mastering OOPS and Java — which laid a rock-solid foundation for writing scalable, efficient Apex code. Today, I specialize in building enterprise-grade solutions across multiple clouds.
+                    </p>
+                    <p>
+                        Outside of technology, I enjoy playing chess (1400+ rating), exploring new things, and continuously learning. I like keeping myself curious, improving my skills, and taking on challenges that help me grow both personally and professionally.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3-Line Floating Skills Banner Section -->
+        <section id="skills" class="py-10 fade-in-up">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+                <p class="text-sm tracking-widest text-sfblue uppercase font-bold drop-shadow-sm">Technical Arsenal</p>
+                <h2 class="text-4xl font-black text-slate-900 dark:text-white">Core Competencies</h2>
+            </div>
+
+            <div class="relative w-full overflow-hidden py-10 bg-white/50 dark:bg-cardbg/20 border-y border-slate-200 dark:border-cardborder backdrop-blur-sm shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
+                <!-- Fade edges for the seamless illusion -->
+                <div class="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-slate-50 dark:from-sfdark to-transparent z-10 pointer-events-none transition-colors duration-500"></div>
+                <div class="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-slate-50 dark:from-sfdark to-transparent z-10 pointer-events-none transition-colors duration-500"></div>
+                
+                <div class="flex flex-col gap-5">
+                    <!-- Row 1 (Fast, Left) -->
+                    <div class="marquee-wrapper">
+                        <div class="marquee-content speed-fast flex gap-5">
+                            <!-- Group 1 -->
+                            <span class="skill-pill"><span class="pill-dot bg-blue-500"></span>Apex Triggers</span>
+                            <span class="skill-pill"><span class="pill-dot bg-purple-500"></span>Lightning Web Components (LWC)</span>
+                            <span class="skill-pill"><span class="pill-dot bg-green-500"></span>REST API</span>
+                            <span class="skill-pill"><span class="pill-dot bg-yellow-500"></span>Flow Builder</span>
+                            <span class="skill-pill"><span class="pill-dot bg-pink-500"></span>OmniStudio</span>
+                            <span class="skill-pill"><span class="pill-dot bg-orange-500"></span>Copado CI/CD</span>
+                            <span class="skill-pill"><span class="pill-dot bg-red-500"></span>APEX</span>
+                            <span class="skill-pill"><span class="pill-dot bg-teal-400"></span>Data Structures</span>
+                            <!-- Group 2 (Exact Duplicate for Seamless Loop) -->
+                            <span class="skill-pill"><span class="pill-dot bg-blue-500"></span>Apex Triggers</span>
+                            <span class="skill-pill"><span class="pill-dot bg-purple-500"></span>Lightning Web Components (LWC)</span>
+                            <span class="skill-pill"><span class="pill-dot bg-green-500"></span>REST API</span>
+                            <span class="skill-pill"><span class="pill-dot bg-yellow-500"></span>Flow Builder</span>
+                            <span class="skill-pill"><span class="pill-dot bg-pink-500"></span>OmniStudio</span>
+                            <span class="skill-pill"><span class="pill-dot bg-orange-500"></span>Copado CI/CD</span>
+                            <span class="skill-pill"><span class="pill-dot bg-red-500"></span>APEX</span>
+                            <span class="skill-pill"><span class="pill-dot bg-teal-400"></span>Data Structures</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 2 (Medium, Right) -->
+                    <div class="marquee-wrapper">
+                        <div class="marquee-content-reverse speed-medium flex gap-5">
+                            <!-- Group 1 -->
+                            <span class="skill-pill"><span class="pill-dot bg-teal-500"></span>SOQL & SOSL</span>
+                            <span class="skill-pill"><span class="pill-dot bg-red-500"></span>Health Cloud</span>
+                            <span class="skill-pill"><span class="pill-dot bg-blue-400"></span>Experience Cloud</span>
+                            <span class="skill-pill"><span class="pill-dot bg-purple-400"></span>AWS SigV4</span>
+                            <span class="skill-pill"><span class="pill-dot bg-indigo-500"></span>Batch Apex</span>
+                            <span class="skill-pill"><span class="pill-dot bg-cyan-500"></span>Data Raptors</span>
+                            <span class="skill-pill"><span class="pill-dot bg-green-600"></span>Flex Cards</span>
+                            <span class="skill-pill"><span class="pill-dot bg-orange-600"></span>Queueable Apex</span>
+                            <!-- Group 2 (Exact Duplicate for Seamless Loop) -->
+                            <span class="skill-pill"><span class="pill-dot bg-teal-500"></span>SOQL & SOSL</span>
+                            <span class="skill-pill"><span class="pill-dot bg-red-500"></span>Health Cloud</span>
+                            <span class="skill-pill"><span class="pill-dot bg-blue-400"></span>Experience Cloud</span>
+                            <span class="skill-pill"><span class="pill-dot bg-purple-400"></span>AWS SigV4</span>
+                            <span class="skill-pill"><span class="pill-dot bg-indigo-500"></span>Batch Apex</span>
+                            <span class="skill-pill"><span class="pill-dot bg-cyan-500"></span>Data Raptors</span>
+                            <span class="skill-pill"><span class="pill-dot bg-green-600"></span>Omniscripts</span>
+                            <span class="skill-pill"><span class="pill-dot bg-orange-600"></span>Intergration Procedure</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 3 (Fastest, Left) -->
+                    <div class="marquee-wrapper">
+                        <div class="marquee-content speed-fastest flex gap-5">
+                            <!-- Group 1 -->
+                            <span class="skill-pill"><span class="pill-dot bg-green-400"></span>Integration Procedures</span>
+                            <span class="skill-pill"><span class="pill-dot bg-yellow-400"></span>OmniScripts</span>
+                            <span class="skill-pill"><span class="pill-dot bg-blue-600"></span>Sales Cloud</span>
+                            <span class="skill-pill"><span class="pill-dot bg-purple-600"></span>Service Cloud</span>
+                            <span class="skill-pill"><span class="pill-dot bg-pink-400"></span>FlexCards</span>
+                            <span class="skill-pill"><span class="pill-dot bg-orange-400"></span>JSON Payloads</span>
+                            <span class="skill-pill"><span class="pill-dot bg-yellow-300"></span>JavaScript / React</span>
+                            <span class="skill-pill"><span class="pill-dot bg-blue-300"></span>HTML / CSS</span>
+                            <!-- Group 2 (Exact Duplicate for Seamless Loop) -->
+                            <span class="skill-pill"><span class="pill-dot bg-green-400"></span>Integration Procedures</span>
+                            <span class="skill-pill"><span class="pill-dot bg-yellow-400"></span>OmniScripts</span>
+                            <span class="skill-pill"><span class="pill-dot bg-blue-600"></span>Sales Cloud</span>
+                            <span class="skill-pill"><span class="pill-dot bg-purple-600"></span>Service Cloud</span>
+                            <span class="skill-pill"><span class="pill-dot bg-pink-400"></span>FlexCards</span>
+                            <span class="skill-pill"><span class="pill-dot bg-orange-400"></span>JSON Payloads</span>
+                            <span class="skill-pill"><span class="pill-dot bg-yellow-300"></span>JavaScript / React</span>
+                            <span class="skill-pill"><span class="pill-dot bg-blue-300"></span>HTML / CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="mb-12 flex items-center gap-4 fade-in-up">
+                <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-cardborder flex items-center justify-center shadow-inner border border-slate-200 dark:border-transparent">
+                    <i class="fa-solid fa-briefcase text-slate-700 dark:text-slate-300 text-xl"></i>
+                </div>
+                <div>
+                    <p class="text-sm tracking-widest text-sfblue uppercase font-bold drop-shadow-sm">Career Journey</p>
+                    <h2 class="text-4xl font-black text-slate-900 dark:text-white">Work Experience</h2>
+                </div>
+            </div>
+
+            <div class="relative border-l-2 border-slate-200 dark:border-cardborder ml-6 space-y-16">
+                <!-- Exp 1 -->
+                <div class="relative ml-8 group fade-in-up">
+                    <span class="absolute -left-[43px] top-6 flex items-center justify-center w-4 h-4 rounded-full bg-sfblue ring-8 ring-slate-50 dark:ring-sfdark group-hover:scale-125 transition-transform duration-300 shadow-[0_0_10px_#0176D3]"></span>
+                    <!-- Light Theme Polish: Solid white background, soft premium shadow, light slate border -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:bg-cardbg dark:border-cardborder dark:shadow-md group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] dark:group-hover:shadow-[0_0_30px_rgba(1,118,211,0.15)] group-hover:-translate-y-1 transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Associate Salesforce Developer</h3>
+                                <p class="text-slate-600 dark:text-slate-400 mt-1 font-medium"><i class="fa-solid fa-building mr-2"></i> Algocirrus, Noida</p>
+                            </div>
+                            <span class="px-4 py-1.5 rounded-full bg-slate-50 dark:bg-sfdark text-slate-600 dark:text-slate-300 text-sm border border-slate-200 dark:border-cardborder font-semibold shadow-sm dark:shadow-none">Nov 2025 – Present</span>
+                        </div>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-300 text-[15px] list-disc pl-5 marker:text-sfblue">
+                            <li>Deployed 10+ declarative automations via Flow Builder and complex Sharing Rules within Sales Cloud and Service Cloud, reducing manual user provisioning effort by 40%.</li>
+                            <li>Architected scalable backend solutions using Apex Triggers, Batch Apex, and dynamic SOQL, strictly adhering to Salesforce Governor Limits.</li>
+                            <li>Configured data security parameters and leveraged Copado to automate CI/CD pipelines, cutting deployment validation time by 30%.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Exp 2 -->
+                <div class="relative ml-8 group fade-in-up">
+                    <span class="absolute -left-[43px] top-6 flex items-center justify-center w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-400 ring-8 ring-slate-50 dark:ring-sfdark group-hover:scale-125 group-hover:bg-purple-500 transition-transform duration-300"></span>
+                    <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:bg-cardbg dark:border-cardborder dark:shadow-md group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] dark:group-hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] group-hover:-translate-y-1 transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Java Developer</h3>
+                                <p class="text-slate-600 dark:text-slate-400 mt-1 font-medium"><i class="fa-solid fa-building mr-2"></i> Jspiders, Noida</p>
+                            </div>
+                            <span class="px-4 py-1.5 rounded-full bg-slate-50 dark:bg-sfdark text-slate-600 dark:text-slate-300 text-sm border border-slate-200 dark:border-cardborder font-semibold shadow-sm dark:shadow-none">Mar 2025 – Oct 2025</span>
+                        </div>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-300 text-[15px] list-disc pl-5 marker:text-purple-500">
+                            <li>Mastered OOP, Collections Framework, Exception Handling, and Stream API, building a strong foundation in object-oriented design patterns mirrored in Apex.</li>
+                            <li>Designed and deployed JDBC-based applications integrating Java with MySQL and built a three-tier REST API on Apache Tomcat.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Timeline Section -->
+        <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="mb-12 flex items-center justify-between fade-in-up">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-cardborder flex items-center justify-center shadow-inner border border-slate-200 dark:border-transparent">
+                        <i class="fa-solid fa-code-branch text-slate-700 dark:text-slate-300 text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm tracking-widest text-sfblue uppercase font-bold drop-shadow-sm">Featured Work</p>
+                        <h2 class="text-4xl font-black text-slate-900 dark:text-white">Projects</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative border-l-2 border-slate-200 dark:border-cardborder ml-6 space-y-16">
+                
+                <!-- Project 1: Carelon (Latest) -->
+                <div class="relative ml-8 group fade-in-up">
+                    <span class="absolute -left-[43px] top-6 flex items-center justify-center w-4 h-4 rounded-full bg-purple-500 ring-8 ring-slate-50 dark:ring-sfdark group-hover:scale-125 transition-transform duration-300 shadow-[0_0_10px_#A855F7]"></span>
+                    <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:bg-cardbg dark:border-cardborder dark:shadow-md group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] dark:group-hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-4">
+                            <div>
+                                <h3 class="text-3xl font-bold text-slate-900 dark:text-white">Carelon (Elevance Health)</h3>
+                                <p class="text-slate-500 dark:text-slate-400 mt-2 font-medium flex gap-4">
+                                    <span><i class="fa-solid fa-heart-pulse mr-1"></i> Health Cloud</span>
+                                    <span><i class="fa-solid fa-briefcase mr-1"></i> Developer</span>
+                                </p>
+                            </div>
+                            <span class="px-4 py-1.5 rounded-full bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 text-sm border border-purple-100 dark:border-purple-800 font-bold shadow-sm dark:shadow-none">Sep 2026 – Present</span>
+                        </div>
+                        
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-300 text-[15px] mb-8 list-disc pl-5 marker:text-purple-500 font-medium">
+                            <li>Built OmniStudio based insurance enrollment workflows using OmniScripts and FlexCards to deliver multi-screen dynamic insurance enrollment experiences.</li>
+                            <li>Developed Subsidy Calculation module: captures annual household income, calls external API via Integration Procedure, and computes final plan price rendered dynamically.</li>
+                            <li>Implemented Proof of Eligibility module: allows members to select a qualifying Life Event and upload supporting documents to apply for continued government aid.</li>
+                        </ul>
+
+                        <div class="bg-slate-50 border border-slate-100 dark:bg-sfdark rounded-2xl p-6 dark:border-cardborder shadow-inner">
+                            <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4 border-b border-slate-200 dark:border-cardborder pb-2"><i class="fa-solid fa-magnifying-glass-chart mr-2 text-purple-500"></i> Case Study Analysis</h4>
+                            <div class="space-y-4 text-sm text-slate-600 dark:text-slate-300">
+                                <div><strong class="text-slate-900 dark:text-white block mb-1">The Business Problem:</strong> Complex insurance enrollments required dynamic, multi-screen flows capable of handling real-time subsidy calculations and processing government aid documentation natively in Salesforce.</div>
+                                <div><strong class="text-slate-900 dark:text-white block mb-1">The Technical Solution:</strong> Architected Health Cloud workflows utilizing OmniStudio. Leveraged Integration Procedures to consume external REST APIs dynamically, feeding data back into OmniScripts and FlexCards.</div>
+                                <div><strong class="text-slate-900 dark:text-white block mb-1">The Impact / Result:</strong> Successfully automated real-time subsidy computations and dynamically rendered available insurance plans across multiple screens based on live API responses.</div>
+                                <div><strong class="text-slate-900 dark:text-white block mb-1">Key Learnings & Architecture:</strong> Utilizing declarative OmniStudio components over custom LWCs significantly accelerates the deployment of complex healthcare enrollment flows while maintaining strict API flexibility.</div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="skill-tag">Health Cloud</span><span class="skill-tag">OmniStudio</span><span class="skill-tag">Integration Procedures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Amazon -->
+                <div class="relative ml-8 group fade-in-up">
+                    <span class="absolute -left-[43px] top-6 flex items-center justify-center w-4 h-4 rounded-full bg-[#FF9900] ring-8 ring-slate-50 dark:ring-sfdark group-hover:scale-125 transition-transform duration-300 shadow-[0_0_10px_#FF9900]"></span>
+                    <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:bg-cardbg dark:border-cardborder dark:shadow-md group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] dark:group-hover:shadow-[0_0_30px_rgba(255,153,0,0.15)] transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-4">
+                            <div>
+                                <h3 class="text-3xl font-bold text-slate-900 dark:text-white">Amazon Seller Central</h3>
+                                <p class="text-slate-500 dark:text-slate-400 mt-2 font-medium flex gap-4">
+                                    <span><i class="fa-solid fa-server mr-1"></i> API Integration</span>
+                                    <span><i class="fa-solid fa-briefcase mr-1"></i> Developer</span>
+                                </p>
+                            </div>
+                            <span class="px-4 py-1.5 rounded-full bg-orange-50 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300 text-sm border border-orange-100 dark:border-orange-800 font-bold shadow-sm dark:shadow-none">Mar 2026 – Aug 2026</span>
+                        </div>
+                        
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-300 text-[15px] mb-8 list-disc pl-5 marker:text-[#FF9900] font-medium">
+                            <li>Custom Salesforce CRM application integrated with Amazon Seller Central to automate e-commerce data sync and streamline operations that automatically tracks action items from seller phone calls.</li>
+                            <li>Built a dynamic JSON payload builder with 3-level fallback priority logic ensuring 100% valid API input; stored AI-generated HTML in custom field for live dashboard rendering.</li>
+                            <li>Bypassed limitations by engineering a custom AWS Signature Version 4 (SigV4) signing implementation in Apex, resolving 403 Forbidden errors.</li>
+                        </ul>
+
+                        <div class="bg-slate-50 border border-slate-100 dark:bg-sfdark rounded-2xl p-6 dark:border-cardborder shadow-inner">
+                            <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4 border-b border-slate-200 dark:border-cardborder pb-2"><i class="fa-solid fa-magnifying-glass-chart mr-2 text-[#FF9900]"></i> Case Study Analysis</h4>
+                            <div class="space-y-4 text-sm text-slate-600 dark:text-slate-300">
+                                <div><strong class="text-slate-900 dark:text-white block mb-1">The Business Problem:</strong> E-commerce data syncs were failing due to AWS 403 Forbidden errors caused by incorrect Content-Type headers and empty session tokens.</div>
+                                <div><strong class="text-slate-900 dark:text-white block mb-1">The Technical Solution:</strong> Built a custom AWS SigV4 signing implementation directly in Apex, and developed a dynamic JSON payload builder with fallback priority logic to secure data integrity.</div>
+                                <div><strong class="text-slate-900 dark:text-white block mb-1">The Impact / Result:</strong> Resolved the 403 errors completely, ensured 100% valid API inputs, and successfully powered a real-time AM dashboard processing live call data.</div>
+                                <div><strong class="text-slate-900 dark:text-white block mb-1">Key Learnings & Architecture:</strong> Bypassing standard Salesforce callout limits by engineering authentication deep within Apex is essential for robust, enterprise-grade external integrations.</div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="skill-tag">Apex</span><span class="skill-tag">LWC</span><span class="skill-tag">AWS S3</span><span class="skill-tag">JSON</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Hospital -->
+                <div class="relative ml-8 group fade-in-up">
+                    <span class="absolute -left-[43px] top-6 flex items-center justify-center w-4 h-4 rounded-full bg-teal-500 ring-8 ring-slate-50 dark:ring-sfdark group-hover:scale-125 transition-transform duration-300 shadow-[0_0_10px_#14B8A6]"></span>
+                    <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:bg-cardbg dark:border-cardborder dark:shadow-md group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] dark:group-hover:shadow-[0_0_30px_rgba(20,184,166,0.15)] transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-4">
+                            <div>
+                                <h3 class="text-3xl font-bold text-slate-900 dark:text-white">Hospital Management System</h3>
+                                <p class="text-slate-500 dark:text-slate-400 mt-2 font-medium flex gap-4">
+                                    <span><i class="fa-solid fa-users-cog mr-1"></i> Core Architecture</span>
+                                    <span><i class="fa-solid fa-briefcase mr-1"></i> Developer</span>
+                                </p>
+                            </div>
+                            <span class="px-4 py-1.5 rounded-full bg-teal-50 text-teal-700 dark:bg-teal-900/30 dark:text-teal-300 text-sm border border-teal-100 dark:border-teal-800 font-bold shadow-sm dark:shadow-none">Nov 2025 – Feb 2026</span>
+                        </div>
+                        
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-300 text-[15px] mb-8 list-disc pl-5 marker:text-teal-500 font-medium">
+                            <li>Built a real-time appointment booking system using Apex row-locking (FOR UPDATE) in LWC to eliminate double-bookings.</li>
+                            <li>Automated patient vitals alert via Apex Triggers dispatching real-time email alerts.</li>
+                            <li>Centralized hospital KPIs using LWC and Apex controllers with an Experience Cloud-style self-service portal configured for 5+ hospital departments.</li>
+                        </ul>
+
+                        <div class="bg-slate-50 border border-slate-100 dark:bg-sfdark rounded-2xl p-6 dark:border-cardborder shadow-inner">
+                            <h4 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4 border-b border-slate-200 dark:border-cardborder pb-2"><i class="fa-solid fa-magnifying-glass-chart mr-2 text-teal-500"></i> Case Study Analysis</h4>
+                            <div class="space-y-4 text-sm text-slate-600 dark:text-slate-300">
+                                <div><strong class="text-slate-900 dark:text-white block mb-1">The Business Problem:</strong> The clinic suffered from database concurrency issues resulting in double-booked appointments, while hospital KPIs were decentralized across multiple departments.</div>
+                                <div><strong class="text-slate-900 dark:text-white block mb-1">The Technical Solution:</strong> Implemented Apex row-locking (`FOR UPDATE`) for transactional integrity in booking. Centralized KPIs using custom LWC and Apex controllers secured by precise Profile and Permission Set configurations.</div>
+                                <div><strong class="text-slate-900 dark:text-white block mb-1">The Impact / Result:</strong> Eliminated appointment double-bookings entirely and successfully deployed an Experience Cloud-style portal for secure data access across 5+ departments.
+                                <div><strong class="text-slate-900 dark:text-white block mb-1">Key Learnings & Architecture:</strong> Explicit database transactional control (row-locking) is a mandatory architectural pattern for high-volume booking systems built natively on the Salesforce platform.</div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span class="skill-tag">Apex Triggers</span><span class="skill-tag">LWC</span><span class="skill-tag">Security Config</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Links Section -->
+        <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center fade-in-up border-t border-slate-200 dark:border-cardborder">
+            <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-4">Let's Connect</h2>
+            <p class="text-slate-600 dark:text-slate-400 mb-12 font-medium">Find me on these platforms or drop an email directly.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="https://www.salesforce.com/trailblazer/yashverma77" target="_blank" class="flex flex-col items-center justify-center p-8 rounded-3xl bg-white border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:bg-cardbg dark:border-cardborder dark:shadow-sm hover:border-[#00A1E0] hover:shadow-[0_0_20px_rgba(0,161,224,0.15)] hover:-translate-y-2 transition-all duration-300 group">
+                    <i class="fa-brands fa-salesforce text-5xl text-[#00A1E0] mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="font-bold text-slate-800 dark:text-slate-200">Trailhead</span>
+                </a>
+                
+                <a href="https://www.github.com/yashverma75" target="_blank" class="flex flex-col items-center justify-center p-8 rounded-3xl bg-white border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:bg-cardbg dark:border-cardborder dark:shadow-sm hover:border-slate-400 hover:shadow-[0_0_20px_rgba(100,116,139,0.15)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:-translate-y-2 transition-all duration-300 group">
+                    <i class="fa-brands fa-github text-5xl text-slate-800 dark:text-white mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="font-bold text-slate-800 dark:text-slate-200">GitHub</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/yashverma77" target="_blank" class="flex flex-col items-center justify-center p-8 rounded-3xl bg-white border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:bg-cardbg dark:border-cardborder dark:shadow-sm hover:border-[#0A66C2] hover:shadow-[0_0_20px_rgba(10,102,194,0.15)] hover:-translate-y-2 transition-all duration-300 group">
+                    <i class="fa-brands fa-linkedin text-5xl text-[#0A66C2] mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="font-bold text-slate-800 dark:text-slate-200">LinkedIn</span>
+                </a>
+
+                <a href="https://leetcode.com/u/yash_verma7" target="_blank" class="flex flex-col items-center justify-center p-8 rounded-3xl bg-white border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] dark:bg-cardbg dark:border-cardborder dark:shadow-sm hover:border-[#FFA116] hover:shadow-[0_0_20px_rgba(255,161,22,0.15)] hover:-translate-y-2 transition-all duration-300 group">
+                    <i class="fa-solid fa-code text-5xl text-[#FFA116] mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="font-bold text-slate-800 dark:text-slate-200">LeetCode</span>
+                </a>
+            </div>
+            
+            <a href="mailto:yashvermaji786@gmail.com" class="inline-flex items-center gap-3 mt-12 px-8 py-4 bg-red-500 text-white font-bold rounded-full shadow-[0_0_20px_rgba(239,68,68,0.4)] hover:bg-red-600 hover:scale-105 transition-all">
+                <i class="fa-solid fa-envelope"></i> yashvermaji786@gmail.com
+            </a>
+        </section>
+    </main>
+
+    <footer class="py-8 text-center text-slate-500 font-medium border-t border-slate-200 dark:border-cardborder text-sm relative z-10">
+        <p>&copy; 2026 Yash Verma. Built with HTML, Tailwind & Custom CSS.</p>
+    </footer>
+
+</body>
+</html>
